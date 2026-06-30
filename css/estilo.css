@@ -1,0 +1,87 @@
+/* estilo.css */
+body {
+  font-family: sans-serif;
+  line-height: 1.6;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  background: #333;
+  padding: 1rem;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+}
+
+section {
+  padding: 40px;
+  max-width: 800px;
+  margin: auto;
+}
+
+img {
+  border: 5px solid #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.footer-content {
+  text-align: center;
+  padding: 20px;
+  background-color: #f4f4f4;
+  margin-top: 40px;
+  border-top: 1px solid #ccc;
+}
+
+/* --- Menu Responsivo Dinâmico --- */
+
+/* Por padrão, esconde o botão do menu em telas grandes */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 10px;
+}
+
+/* Regras aplicadas apenas em telas de celular (máximo 768px) */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+    /* Mostra o botão hambúrguer */
+  }
+
+  nav ul {
+    display: none;
+    /* Esconde a lista de links por padrão */
+    flex-direction: column;
+    /* Alinha os links um embaixo do outro */
+    background-color: #333;
+    width: 100%;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    padding: 20px 0;
+    text-align: center;
+  }
+
+  /* Classe que o JavaScript vai adicionar para MOSTRAR o menu */
+  nav ul.active {
+    display: flex;
+  }
+
+  nav ul li {
+    margin: 15px 0;
+  }
+}
